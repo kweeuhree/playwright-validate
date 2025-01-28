@@ -1,55 +1,39 @@
-# 🐺 QA Wolf Take Home Assignment
+# 🌐 Hacker News Article Scraper & Validator
 
-Welcome to the QA Wolf take home assignment for our [QA Engineer](https://www.task-wolf.com/apply-qae) role! We appreciate your interest and look forward to seeing what you come up with.
+This repository contains a Node.js-based web scraper that extracts the latest articles from Hacker News. The scraper fetches the articles and checks if they are sorted from newest to oldest based on their timestamps. The sorting validation is done using the validateSort function, ensuring that the articles are presented correctly.
 
-## Instructions
+Features:
 
-This assignment has two questions as outlined below. When you are done, upload your assignment to our [application page](https://www.task-wolf.com/apply-qae):
+- Scrapes the first 100 articles from Hacker News.
+- Validates that articles are sorted from newest to oldest.
+- Uses Playwright for scraping.
+- Outputs whether the sorting succeeds or fails.
 
+## 🧱 Project structure
 
-### Question 1
+`index.js` contains the main entry point of the application, handles the scraping, validation, and error logging.
+`scraper.js` contains the logic for scraping Hacker News articles.
+`validate.js` validates that the articles are sorted correctly.
+`errorHandler.js` throws a formatted error.
 
-In this assignment, you will create a script on [Hacker News](https://news.ycombinator.com/) using JavaScript and Microsoft's [Playwright](https://playwright.dev/) framework. 
+## 🔍 Prerequisites
 
-1. Install node modules by running `npm i`.
+- Node.js
+- npm
 
-2. Edit the `index.js` file in this project to go to [Hacker News/newest](https://news.ycombinator.com/newest) and validate that EXACTLY the first 100 articles are sorted from newest to oldest. You can run your script with the `node index.js` command.
+## ▶️ Usage
 
-Note that you are welcome to update Playwright or install other packages as you see fit, however you must utilize Playwright in this assignment.
+- Make sure all necessary dependencies are installed
+- Clone or fork this repository
+- In the project folder, run the following command:
 
-### Question 2
+```bash
+node ./src/index.js
+```
 
-Why do you want to work at QA Wolf? Please record a short, ~2 min video using [Loom](https://www.loom.com/) that includes:
+Example output:
 
-1. Your answer 
-
-2. A walk-through demonstration of your code, showing a successful execution
-
-The answer and walkthrough should be combined into *one* video, and must be recorded using Loom as the submission page only accepts Loom links.
-
-## Frequently Asked Questions
-
-### What is your hiring process? When will I hear about next steps?
-
-This take home assignment is the first step in our hiring process, followed by a final round interview if it goes well. **We review every take home assignment submission and promise to get back to you either way within one week (usually sooner).** The only caveat is if we are out of the office, in which case we will get back to you when we return. If it has been more than one week and you have not heard from us, please do follow up.
-
-The final round interview is a 2-hour technical work session that reflects what it is like to work here. We provide a $150 stipend for your time for the final round interview regardless of how it goes. After that, there may be a short chat with our director about your experience and the role.
-
-Our hiring process is rolling where we review candidates until we have filled our openings. If there are no openings left, we will keep your contact information on file and reach out when we are hiring again.
-
-### Having trouble uploading your assignment?
-Be sure to delete you `node_modules`, then zip your assignment folder prior to upload. 
-
-### How do you decide who to hire?
-
-We evaluate candidates based on three criteria:
-
-- Technical ability (as demonstrated in the take home and final round)
-- Customer service orientation (as this role is customer facing)
-- Alignment with our values (captured [here](https://www.notion.so/qawolf/QA-Wolf-QA-Engineer-Remote-156203a1e476459ea5e6ffca972d0efe))
-
-This means whether we hire you is based on how you do during our interview process, not on your previous experience (or lack thereof). Note that you will also need to pass a background check to work here as our customers require this.
-
-### How can I help my application stand out?
-
-We've found that our best hires have been the most enthusiastic throughout our process. If you are very excited about working here, please feel free to go above and beyond on this assignment.
+```bash
+EXACTLY the first 100 articles are sorted from newest to oldest // success
+failed to validate sorting // failure
+```
