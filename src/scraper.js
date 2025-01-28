@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 
-import { throwError } from "./index.js";
+import { throwError } from "./exports.js";
 
 // Define hacker news url
 export const hackerUrl = "https://news.ycombinator.com/newest";
