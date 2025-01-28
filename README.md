@@ -12,8 +12,11 @@ Features:
 ## 🧱 Project structure
 
 `index.js` contains the main entry point of the application, handles the scraping, validation, and error logging.
+
 `scraper.js` contains the logic for scraping Hacker News articles.
+
 `validate.js` validates that the articles are sorted correctly.
+
 `errorHandler.js` throws a formatted error.
 
 ## 🔍 Prerequisites
