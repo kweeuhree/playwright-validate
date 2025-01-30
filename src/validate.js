@@ -5,8 +5,13 @@
  * @returns {boolean} - Returns true if the array is sorted in descending order, false otherwise.
  */
 export const validateSort = (dateStrings) => {
-  return dateStrings.every((element, index, arr) => {
+  // If date strings is a single string, it means it holds an error, return
+  if (typeof dateStrings === "string") {
+    return false;
+  }
+  // Verify order of dates
+  return dateStrings.every(function (element, index, arr) {
     if (index === 0) return true;
-    return arr[index] >= element;
+    return arr[index - 1] >= element;
   });
 };

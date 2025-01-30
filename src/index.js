@@ -22,9 +22,10 @@ async function sortHackerNewsArticles() {
   try {
     const articlesDateStrings = await scrape();
     if (articlesDateStrings) {
-      const validationResult = validateSort(articlesDateStrings)
-        ? output.success
-        : output.failure;
+      const validationResult =
+        validateSort(articlesDateStrings) === true
+          ? output.success
+          : output.failure;
       console.log(validationResult);
       return validationResult;
     }
