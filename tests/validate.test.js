@@ -4,7 +4,7 @@ import { validateSort } from "../src/validate.js";
 import {
   mockValidateInvalid,
   mockValidateValid,
-} from "../src/testdata/validateMocks.js";
+} from "../testdata/validateMocks.js";
 
 describe("validateSort function", () => {
   test("returns false", () => {
